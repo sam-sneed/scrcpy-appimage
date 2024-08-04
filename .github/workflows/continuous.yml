@@ -15,6 +15,12 @@ jobs:
       image: appimagecrafters/appimage-builder:latest
     steps:
       - uses: actions/checkout@v4.1.7
+      - name: Install build essential
+        run: |
+          apt update
+          sudo apt -y install build-essential
+  
+      - uses: actions/checkout@v4.1.7
       - name: Set up User
         run: |
           apt update
@@ -24,7 +30,6 @@ jobs:
           usermod -aG sudo github
           su - github
           sudo apt -y install git wget curl jq unzip
-          sudo apt -y install build-essential
 
 
       - name: Clone scrcpy
