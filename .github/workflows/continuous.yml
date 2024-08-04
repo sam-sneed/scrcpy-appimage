@@ -10,7 +10,7 @@ on:
 
 jobs:
   ubuntu:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-noble
     container: 
       image: appimagecrafters/appimage-builder:latest
     steps:
